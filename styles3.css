@@ -1,0 +1,227 @@
+/* Estilo General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contenedor general de las reservas */
+.reservas-container {
+    display: flex;
+    flex-direction: column; /* Asegura que el título esté arriba */
+    align-items: center; /* Centra el contenido */
+    width: 100%;
+  }
+  
+  /* Título centrado encima del calendario */
+  .main-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    width: 100%; /* Ocupará todo el ancho para que no cree columnas */
+  }
+  
+  /* Contenedor del calendario y las horas */
+  .calendar-hours-container {
+    display: flex;
+    justify-content: center; /* Asegura que el calendario y las horas estén alineados */
+    gap: 20px;
+   
+   align-items: flex-start; /* Alinea al inicio vertical */
+    margin-top: 20px
+}
+  
+  
+  
+  .calendar-container {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para diseño */
+  }
+  
+
+  #calendar-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo el contenido */
+  }
+  
+  #calendar-container h3 {
+    text-align: center;
+    width: 100%; /* Asegura que el título se expanda completamente */
+    margin-bottom: 10px; /* Espaciado con el calendario */
+  }
+  
+
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-header .prev-btn,
+  .calendar-header .next-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .calendar-header .prev-btn:hover,
+  .calendar-header .next-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .calendar-header .month-year {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columnas para los días */
+    gap: 4px;
+  }
+  
+  .day-header {
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 0;
+    background-color: #e9ecef;
+    border-radius: 5px;
+  }
+  
+  .day {
+    padding: 8px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: border 0.2s ease-in-out, background-color 0.2s ease;
+    background-color: white; /* Por defecto, día libre */
+  }
+  
+  /* Día con algunas reservas */
+  .day.partial {
+    background-color: #ffcc00; /* Amarillo */
+  }
+  
+  /* Día totalmente reservado */
+  .day.full {
+    background-color: #dc3545; /* Rojo */
+    color: white; /* Para que se lea mejor */
+  }
+  
+  /* Día actual */
+  .day.today {
+    background-color: #007bff; /* Azul */
+    color: white;
+  }
+  
+  /* Hover para destacar la selección */
+  .day:hover {
+    border-color: #007bff;
+    cursor: pointer;
+  }
+  
+  .blank {
+    visibility: hidden; /* Ocultar días en blanco */
+  }
+
+  .hours-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: #f9f9f9;
+    padding: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    max-width: 250px; /* Se mantiene el ancho fijo */
+    width: 250px; /* Asegura que no cambie de tamaño */
+    height: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  
+  .hours-container h4 {
+    width: 100%; /* Mantiene el título con ancho completo */
+    text-align: center; /* Centra el texto */
+    white-space: nowrap; /* Evita que el texto haga salto de línea */
+  }
+  
+  
+  .hour-box {
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 8px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    flex-grow: 1; /* Se ajusta para ocupar el espacio disponible */
+  }
+  
+  .hour-box:hover {
+    transform: scale(1.05);
+  }
+  
+  .hour-box.available {
+    background-color: #28a745;
+  }
+  
+  .hour-box.reserved {
+    background-color: #dc3545;
+  }
+  
+  .hour-grid {
+    display: grid;
+    grid-template-rows: repeat(13, 1fr); /* 13 filas (de 8:00 a 20:00) */
+    gap: 6px;
+    width: 100%;
+  }
+  
+
+
+
+
+
+
+
